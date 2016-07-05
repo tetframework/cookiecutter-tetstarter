@@ -1,0 +1,14 @@
+{
+    "full_name": "Antti Haapala",
+    "email": "antti.haapala@anttipatterns.com",
+    "github_username": "ztane",
+    "project": "tet-starter",
+    "package": "tetstarter",
+    "persistence": ["sqlalchemy", "none"],
+    "project_short_description": "Tet Starter contains all the boilerplate you need to start a Tet application",
+    "version": "0.1.0",
+    "release_date": "2016-07-05",
+    "_copy_without_render": [
+        "static"
+    ]
+}
