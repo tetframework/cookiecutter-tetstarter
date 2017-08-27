@@ -9,7 +9,7 @@ from ..models import DBSession, MyModel
 @view_config(route_name='home', renderer='{{cookiecutter.package}}:templates/index.tk')
 def my_view(request):
     try:
-        one = DBSession.query(MyModel).filter(MyModel.name == 'one').first()
+        one = request.dbsession.query(MyModel).filter(MyModel.name == 'one').first()
     except DBAPIError:
         return Response(conn_err_msg, content_type=str('text/plain'), status_int=500)
     return {'one': one, 'project': '{{cookiecutter.project}}'}
