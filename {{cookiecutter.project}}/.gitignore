@@ -20,4 +20,10 @@ Data.fs*
 coverage
 test
 __pycache__/
+.flags
+*.sqlite
+.venv-path
+.idea/workspace.xml
+.idea/tasks.xml
+venv
 

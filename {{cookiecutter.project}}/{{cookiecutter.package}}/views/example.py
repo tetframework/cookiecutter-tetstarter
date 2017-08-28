@@ -3,7 +3,7 @@ from tet.view import view_config
 
 from sqlalchemy.exc import DBAPIError
 
-from ..models import DBSession, MyModel
+from ..models import MyModel
 
 
 @view_config(route_name='home', renderer='{{cookiecutter.package}}:templates/index.tk')

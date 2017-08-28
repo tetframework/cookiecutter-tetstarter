@@ -5,7 +5,7 @@ import zope.sqlalchemy
 
 # import or define all models here to ensure they are attached to the
 # Base.metadata prior to any initialization routines
-from .mymodel import MyModel  # flake8: noqa
+from .example import MyModel  # flake8: noqa
 
 # run configure_mappers after defining all of the models to ensure
 # all relationships can be setup
@@ -45,9 +45,10 @@ def get_tm_session(session_factory, transaction_manager):
 
 def includeme(config):
     """
-    Initialize the model for a Pyramid app.
-    Activate this setup using ``config.include('{{ cookiecutter.repo_name }}.models')``.
+    Initialize the model for a Tet app.
+    Activate this setup using ``config.include('{{ cookiecutter.package }}.models')``.
     """
+
     settings = config.get_settings()
     settings['tm.manager_hook'] = 'pyramid_tm.explicit_manager'
 

@@ -10,17 +10,18 @@ with open(os.path.join(here, 'CHANGES.txt')) as f:
 
 
 requires = [
-    'pyramid',
+    'pyramid>=1.9',
     'transaction',
     'pyramid_tm',
+    'pyramid_retry',
     'pyramid_debugtoolbar',
     'waitress',
     'tet',
+    'tonnikala',
     'pyramid_chameleon',
-    {% if cookiecutter.persistence == 'sqlalchemy' -%}
     'zope.sqlalchemy',
     'SQLAlchemy',
-    {% endif -%}
+    'alembic',
 ]
 
 setup_requires = [
@@ -55,6 +56,7 @@ setup(
       "Framework :: Pyramid",
       "Programming Language :: Python :: 3.4",
       "Programming Language :: Python :: 3.5",
+      "Programming Language :: Python :: 3.6",
       "Programming Language :: Python :: 3 :: Only",
       "Topic :: Internet :: WWW/HTTP",
       "Topic :: Internet :: WWW/HTTP :: WSGI :: Application",
@@ -72,19 +74,16 @@ setup(
     message_extractors={
         '{{ cookiecutter.package }}': [
             ('**.py', 'python', None),  # babel extractor supports plurals
-            ('**.pt', 'lingua_xml', None),
+            ('**.tk', 'tonnikala', None),
         ],
     },
     extras_require = {
-        'testing':testing_extras,
-        'docs':docs_extras,
-        'i18n':i18n_extras,
+        'testing': testing_extras,
+        'docs': docs_extras,
+        'i18n': i18n_extras,
     },
     entry_points="""\
     [paste.app_factory]
     main = {{cookiecutter.package}}:main
-    {% if cookiecutter.persistence == 'sqlalchemy' -%}[console_scripts]
-    initialize_{{cookiecutter.package}}_db = {{cookiecutter.package}}.scripts.initializedb:main
-    {% endif -%}
     """,
 )

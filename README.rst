@@ -29,7 +29,7 @@ This is a Cookie Cutter templ
 
 - $VENV/bin/python setup.py develop
 
-- $VENV/bin/initialize_{{cookiecutter.project}}_db development.ini
+- $VENV/bin/initialize_{{cookiecutter.package}}_db development.ini
 
 - $VENV/bin/pserve development.ini
 
