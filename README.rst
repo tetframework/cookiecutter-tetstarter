@@ -8,28 +8,34 @@ Cookiecutter template for a Tet application. See https://github.com/audreyr/cook
 * Virtualenv automatically created and setup in development mode
 * Free software: BSD license
 * Travis-CI_: Ready for Travis Continuous Integration testing
-* Tox_ testing: Setup to easily test for Python 3.4 and 3.5
-* Sphinx_ docs: Documentation ready for generation with, for example, ReadTheDocs_
+* Tox_ testing: Setup to easily test for Python 3.5 and 3.6
+* Sphinx_ docs: Documentation ready for generation with, for 
+  example, ReadTheDocs_
 
 Usage
 -----
 
-Generate a Pyramid project::
+Generate a Tet Starter project::
 
     cookiecutter https://github.com/tetframework/cookiecutter-tetstarter
 
 Then:
 
-* cd to project name given in the last cookiecutter question
-* Run bin/pserve development.ini
+- If you chose to create a database, you can install it now
 
-This is a Cookie Cutter templ
+- ``cd <directory containing this file>``
 
-- cd <directory containing this file>
+- Create a Python 3.5+ virtual environment; hereinafter the directory is
+  referred to as ``$VENV``.
 
-- $VENV/bin/python setup.py develop
+- ``$VENV/bin/pip install -e .``
 
-- $VENV/bin/initialize_{{cookiecutter.package}}_db development.ini
+- Migrate the database to the initial state with 
+  ``$VENV/bin/alembic -n dev upgrade head``
 
-- $VENV/bin/pserve development.ini
+  Alternatively you might want to forgo the database creation now, remove the
+  ``migrations/versions/INIT_initial.py``, edit the models and create a new
+  initial migration with ``alembic -n dev revision --autogenerate``.
+
+- ``$VENV/bin/pserve development.ini``
 

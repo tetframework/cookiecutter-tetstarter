@@ -16,12 +16,12 @@ requires = [
     'pyramid_retry',
     'pyramid_debugtoolbar',
     'waitress',
-    'tet',
-    'tonnikala',
-    'pyramid_chameleon',
+    'tet>=0.3.2',
+    'tonnikala>=1.0.0b4',
     'zope.sqlalchemy',
     'SQLAlchemy',
     'alembic',
+    'psycopg2',
 ]
 
 setup_requires = [

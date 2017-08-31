@@ -4,6 +4,7 @@
     "github_username": "ztane",
     "project": "Tet-Starter",
     "package": "tetstarter",
+    "dev_sqlalchemy_url": "postgresql://user:password@localhost:5432/tetstarter_dev",
     "project_short_description": "Tet Starter contains all the boilerplate you need to start a Tet application using SQLAlchemy and Alembic",
     "version": "0.1.0",
     "release_date": "2016-07-05",
