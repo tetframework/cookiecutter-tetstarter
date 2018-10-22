@@ -8,7 +8,7 @@ Cookiecutter template for a Tet application. See https://github.com/audreyr/cook
 * Virtualenv automatically created and setup in development mode
 * Free software: BSD license
 * Travis-CI_: Ready for Travis Continuous Integration testing
-* Tox_ testing: Setup to easily test for Python 3.5 and 3.6
+* Tox_ testing: Setup to easily test for Python 3.5, 3.6, 3.7
 * Sphinx_ docs: Documentation ready for generation with, for 
   example, ReadTheDocs_
 
@@ -37,5 +37,5 @@ Then:
   ``migrations/versions/INIT_initial.py``, edit the models and create a new
   initial migration with ``alembic -n dev revision --autogenerate``.
 
-- ``$VENV/bin/pserve development.ini``
+- ``$VENV/bin/pserve development.ini --reload``
 
